@@ -1,16 +1,20 @@
 SELECT * FROM bank;
 
+# Total Application Number
 SELECT COUNT(id) AS Total_applications
 FROM bank;
 
+# Application Number for Last Month
 SELECT COUNT(id) AS MTD
 FROM bank
 WHERE MONTH(issue_date) = 12;
 
+# Application Number for The Month Before Last Month
 SELECT COUNT(id) AS PMTD
 FROM bank
 WHERE MONTH(issue_date) = 11;
 
+# 
 SELECT SUM(loan_amount) AS Total_funded
 FROM bank;
 
@@ -143,3 +147,4 @@ SUM(total_payment) AS Total_Amount_Received
 FROM bank
 GROUP BY home_ownership
 ORDER BY home_ownership;
+
